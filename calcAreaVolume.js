@@ -1,8 +1,13 @@
-var wrapLog = function (cb, name) {
-  const transformer = cb;
-  const name2 = name;
-  return function (a,b,c,d,e) {
-    console.log(a,b,c,d,e);
+var wrapLog = function (callback, name) {
+  // const transformer = callback;
+  // const calcType = name;
+  return function (a,b,c) {
+    if(name === "area"){
+      console.log(name + "(" + a + ", " + b + ")" + "= " + area(a,b));
+    } else {
+       console.log(name + "(" + a + ", " + b + ", " + c + ")" + "= " + volume(a,b,c));
+    }
+
   }
 };
 
